@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'PersonCreate' %}">Create</a>
+
+    <ul>
+    {% for person in object_list %}
+        <li>
+        {{ person.name }} | {{ person.companyname}} | {{ person.ic }} | {{ person.date }} | 
+        <a href="{% url 'PersonDelete' person.pk %}">Delete</a> | 
+        <a href="{% url 'PersonUpdate' person.pk %}">Edit</a> 
+        </li>    
+    {% endfor %}
+    </ul>
+
+
+</body>
+</html>
